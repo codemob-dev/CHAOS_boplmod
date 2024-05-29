@@ -15,4 +15,28 @@ namespace CHAOS
         public abstract void Disable();
         public abstract void LevelStart();
     }
+    public abstract class OneTimeChaosEvent : ChaosEvent
+    {
+        private bool started = false;
+        public OneTimeChaosEvent() { }
+        public override sealed string Enable()
+        {
+            return Activate();
+        }
+        public override sealed void Disable()
+        {
+
+        }
+        public sealed override void LevelStart()
+        {
+            if (started)
+            {
+                CHAOS.DeactivateSpecificChaos(Id);
+            } else
+            {
+                started = true;
+            }
+        }
+        public abstract string Activate();
+    }
 }

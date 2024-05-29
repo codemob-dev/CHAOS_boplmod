@@ -34,6 +34,7 @@ namespace CHAOS
             RegisterChaosEvent<BigBopls>();
             RegisterChaosEvent<UpsideDownCamera>();
             RegisterChaosEvent<SpeedyBopls>();
+            RegisterChaosEvent<AbilityScramble>();
         }
 
         public static void RegisterChaosEvent<T>() where T : ChaosEvent, new()
@@ -82,6 +83,19 @@ namespace CHAOS
             chaos.Active = false;
         }
 
+        public static void DeactivateSpecificChaos(int id)
+        {
+            if (!activeChaos.Contains(id))
+            {
+                throw new IndexOutOfRangeException("Chaos is not activated or does not exist!");
+            }
+
+            activeChaos.Remove(id);
+            var chaos = availableChaos[id];
+            chaos.Disable();
+
+        }
+
         private static ChaosText AddChaosText(string text)
         {
             Vector2? previousPosition;
@@ -98,14 +112,14 @@ namespace CHAOS
             return chaosTexts.Last();
         }
 
-        private static void RemoveChaosText()
+        private static void RemoveChaosText(int id = 0)
         {
             if (!chaosTexts.Any()) return;
-            chaosTexts.First().Remove();
+            chaosTexts[id].Remove();
             chaosTexts.RemoveAt(0);
-            foreach (var text in chaosTexts)
+            for (int i = id; i < chaosTexts.Count; i++)
             {
-                text.Move(-1);
+                chaosTexts[i].Move(-1);
             }
         }
 

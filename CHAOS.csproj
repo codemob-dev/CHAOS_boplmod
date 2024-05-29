@@ -431,6 +431,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AbilityChaos.cs" />
     <Compile Include="PlayerChaos.cs" />
     <Compile Include="CHAOS.cs" />
     <Compile Include="ChaosEvent.cs" />
