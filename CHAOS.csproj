@@ -431,10 +431,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="PlayerChaos.cs" />
     <Compile Include="CHAOS.cs" />
     <Compile Include="ChaosEvents.cs" />
     <Compile Include="ChaosText.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="CameraChaos.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
