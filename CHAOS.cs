@@ -33,6 +33,7 @@ namespace CHAOS
 
             RegisterChaosEvent<BigBopls>();
             RegisterChaosEvent<UpsideDownCamera>();
+            RegisterChaosEvent<SpeedyBopls>();
         }
 
         public static void RegisterChaosEvent<T>() where T : ChaosEvent, new()

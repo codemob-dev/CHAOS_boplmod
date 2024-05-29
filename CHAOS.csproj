@@ -433,7 +433,7 @@
   <ItemGroup>
     <Compile Include="PlayerChaos.cs" />
     <Compile Include="CHAOS.cs" />
-    <Compile Include="ChaosEvents.cs" />
+    <Compile Include="ChaosEvent.cs" />
     <Compile Include="ChaosText.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="CameraChaos.cs" />
