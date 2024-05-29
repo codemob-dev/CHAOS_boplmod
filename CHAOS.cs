@@ -134,7 +134,7 @@ namespace CHAOS
                 num *= (uint)PlayerHandler.Get().NumberOfTeams();
                 foreach (var player in PlayerHandler.Get().PlayerList())
                 {
-                    num += (uint)(player.Deaths * player.GamesWon + player.Team * player.Kills);
+                    num += (uint)((player.Deaths + 1) * (player.GamesWon + 1) + (player.Team + 1) * (player.Kills + 1));
                 }
                 return new Unity.Mathematics.Random(num);
             }
